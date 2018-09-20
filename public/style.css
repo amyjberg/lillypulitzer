@@ -19,3 +19,33 @@ form div {
   margin: 1em;
   display: inline-block;
 }
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+}
+
+.product-card {
+  margin: 5px;
+  width: 200px;
+  padding: 2px;
+}
+
+.product-card:hover {
+  background-color: plum;
+}
+
+.product-card h4 {
+  text-align: center;
+}
+
+.product-title {
+  font-size: .75em;
+}

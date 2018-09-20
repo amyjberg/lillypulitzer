@@ -16,12 +16,14 @@ class Products extends React.Component {
     const products = this.props.products
     return (
       <div>
-        <h2>Products:</h2>
-        {
-          products.map(product => (
-            <ProductCard product={product} key={product.product_id}/>
-          ))
-        }
+        <h2>Our Products:</h2>
+        <div className="products-container" >
+          {
+            products.map(product => (
+              <ProductCard product={product} key={product.product_id}/>
+            ))
+          }
+        </div>
       </div>
     )
   }
