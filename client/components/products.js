@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import { retrieveProducts } from '../store/products'
+import ProductCard from './product-card'
 
 class Products extends React.Component {
   constructor() {
@@ -15,8 +16,12 @@ class Products extends React.Component {
     const products = this.props.products
     return (
       <div>
-        <h2>Did we get the products?</h2>
-        <h2>{`products length: ${products.length}`}</h2>
+        <h2>Products:</h2>
+        {
+          products.map(product => (
+            <ProductCard product={product} key={product.product_id}/>
+          ))
+        }
       </div>
     )
   }
