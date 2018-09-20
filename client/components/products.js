@@ -5,6 +5,7 @@ import { fetchProductData } from '../store/selected-product'
 import ProductCard from './product-card'
 // import SelectedProductCard from './selected-product-card'
 import SelectedProduct from './selected-product'
+import PriceFilter from './price-filter'
 
 class Products extends React.Component {
   constructor() {
@@ -25,6 +26,7 @@ class Products extends React.Component {
     const productSelected = Object.keys(selectedProduct).length !== 0
     return (
       <div>
+        <PriceFilter />
         <h2>Our Products:</h2>
           {
             productSelected ? <SelectedProduct /> : null

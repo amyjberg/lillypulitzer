@@ -26,6 +26,16 @@ export const retrieveProducts = () => async dispatch => {
   }
 }
 
+export const searchProductsByPrice = (bottom, top) => async dispatch => {
+  try {
+    const { data } = await axios.get(`https://dev.lillypulitzer.com/s/lillypulitzer-us/dw/shop/v18_3/product_search?expand=availability,images,prices,variations&count=18&refine_1=cgid=just-in&refine_2=price=(${bottom}..${top})&q=&start=0&client_id=7469c353-e112-4902-bf40-ead35df41219`)
+
+    dispatch(getProducts(data.hits))
+  } catch (err) {
+    console.error(err)
+  }
+}
+
 // REDUCER
 
 const reducer = (state = initialState, action) => {
